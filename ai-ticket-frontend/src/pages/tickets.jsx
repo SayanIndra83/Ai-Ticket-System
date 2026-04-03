@@ -127,7 +127,7 @@ export default function Tickets() {
                 Welcome <span className="text-cyan-500">{user?.userName || "User"}</span>
               </span>
               {user?.role === "admin" ? (
-                <Link to="/admin" className="text-base btn btn-ghost btn-sm font-semibold px-2 sm:px-3">
+                <Link to="/admin" className="text-sm sm:text-base btn btn-ghost btn-sm font-semibold px-2 sm:px-3">
                   Admin Panel
                 </Link>
               ) : (
@@ -135,7 +135,7 @@ export default function Tickets() {
               )}
               <button
                 onClick={handleLogout}
-                className="bg-red-500 hover:bg-red-600 text-base btn btn-error text-white border-none btn-sm px-2 sm:px-4 transition-colors"
+                className="bg-red-500 hover:bg-red-600 text-sm sm:text-base btn btn-error text-white border-none btn-sm px-2 sm:px-4 transition-colors"
               >
                 Logout
               </button>
