@@ -12,7 +12,7 @@ export const sendMail = async (to, subject, text) => {
 });
 
 const info = await transporter.sendMail({
-    from: `"Inngest TMS" <${process.env.EMAIL_USER}>`, // sender address
+    from: `"Assistant.Ai Support" <${process.env.EMAIL_USER}>`, // sender address
     to,
     subject, // subject line
     text

@@ -32,7 +32,7 @@ const analyzeTicket = async(ticket) =>{
         
     - summary: A short 1-2 sentence summary of the issue.
     - priority: One of "low", "medium", or "high".
-    - helpfulNotes: A detailed technical explanation that a moderator can use to solve this issue. Include useful  external links or resources if possible.
+    - helpfulNotes: A detailed technical explanation if it's a technical help otherwise explanation suitable for that issue that a moderator can use to solve this issue. Include useful  external links or resources if possible.
     - relatedSkills: An array of relevant skills required to solve the issue (e.g., ["React", "MongoDB"]).
         
     Respond ONLY in this JSON format and do not include any other text or markdown in the answer:
