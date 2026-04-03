@@ -23,17 +23,22 @@ const registerUser = async (req, res) => {
                     }
                 )
         }
-
+        // verified gmail or not
+        const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+        if (!gmailRegex.test(email.trim())) {
+            return res.status(400).json({
+                success: false,
+                message: "This is not a verified gmail account"
+            });
+        }
         // user does exists already with the email or userName
 
-        const existingUser = await User.findOne({
-            $or: [{ userName }, { email }]
-        }
+        const existingUser = await User.findOne({email}
         )
 
         if (existingUser) return res.status(409).json({
             success: false,
-            message: "User with this email or UserName already exists."
+            message: "User with this email already registered."
         })
 
         // fresh user -> hash the password and create an object for the user in the database
