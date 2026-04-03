@@ -29,7 +29,7 @@ app.use("/api/inngest", serve({
     functions:[onTicketCreated, onUserSignup],
     
 }))
-const port = process.env.PORT_NUMBER|| 3000;
+const port = process.env.PORT|| 3000;
 connect_db()
 .then(()=>{
     app.listen(port);
