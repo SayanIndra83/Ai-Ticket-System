@@ -127,7 +127,7 @@ export default function Tickets() {
                 Welcome <span className="text-cyan-500">{user?.userName || "User"}</span>
               </span>
               {user?.role === "admin" ? (
-                <Link to="/admin" className="text-xs sm:text-base btn btn-ghost btn-sm font-semibold px-2 sm:px-3">
+                <Link to="/admin" className="text-base btn btn-ghost btn-sm font-semibold px-2 sm:px-3">
                   Admin Panel
                 </Link>
               ) : (
@@ -135,7 +135,7 @@ export default function Tickets() {
               )}
               <button
                 onClick={handleLogout}
-                className="bg-red-500 hover:bg-red-600 text-xs sm:text-base btn btn-error text-white border-none btn-sm px-2 sm:px-4 transition-colors"
+                className="bg-red-500 hover:bg-red-600 text-base btn btn-error text-white border-none btn-sm px-2 sm:px-4 transition-colors"
               >
                 Logout
               </button>
@@ -150,7 +150,7 @@ export default function Tickets() {
         <div className="card bg-base-200 shadow-sm border border-base-300 mb-8 sm:mb-10 rounded-2xl">
           <div className="card-body p-5 sm:p-8">
             <h2 className="card-title text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Create a New Ticket</h2>
-            <p className="text-base-content/60 text-xs sm:text-sm mb-4">
+            <p className="text-base-content/60 text-sm mb-2">
               Need help? Fill out the form below and the AI assistant will categorize it.
             </p>
 
@@ -164,7 +164,7 @@ export default function Tickets() {
                   value={form.title}
                   onChange={handleChange}
                   placeholder="e.g., Cannot connect to database"
-                  className="input input-bordered focus:input-primary w-full bg-base-100 text-sm sm:text-base"
+                  className="input input-bordered focus:input-primary w-full bg-base-100 text-sm sm:text-base mb-4"
                   required
                 />
               </label>
