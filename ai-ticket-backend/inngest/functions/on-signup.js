@@ -8,7 +8,7 @@ export const onUserSignup = inngest.createFunction(
     { id: "on-user-signup", retries:2, triggers: { event: "user/signup" } },
   async ({ event, step }) => {
     try {
-      const {email} =  event.data
+      const {email, userName} =  event.data
       const user = await step.run("get-user-email", async() => {
        const userObj = await User.findOne({email})
 
@@ -18,7 +18,7 @@ export const onUserSignup = inngest.createFunction(
 
       await step.run("send-welcome-email", async()=>{
         const subject = `Welcome to the app`
-        const message = `Hi,
+        const message = `Pranam ${userName} 🙏,
         \n\n
         Thanks for signing up. We're glad to have you onboard!`
 

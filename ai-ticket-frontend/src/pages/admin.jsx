@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function AdminPanel() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [editingUser, setEditingUser] = useState(null);
@@ -23,10 +23,9 @@ export default function AdminPanel() {
           Authorization: `Bearer ${token}`,
         },
       });
-      
 
       const data = await res.json();
-      
+
       if (res.ok) {
         setUsers(data);
         setFilteredUsers(data);
@@ -90,12 +89,19 @@ export default function AdminPanel() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10">
-       <button onClick={() => navigate("/")} className="bg-green-600 text-sm btn btn-ghost btn-sm mb-4">
+    <div className="max-w-4xl mx-auto mt-6 sm:mt-10 px-4">
+      <button
+        onClick={() => navigate("/")}
+        className="bg-green-600 text-white text-sm btn btn-ghost btn-sm mb-4"
+      >
         ← Home
       </button>
 
-      <h1 className="text-2xl font-bold mb-6">Admin Panel - Manage Users</h1>
+      
+      <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+        Admin Panel - Manage Users
+      </h1>
+      
       <input
         type="text"
         className="input input-bordered w-full mb-6"
@@ -103,18 +109,19 @@ export default function AdminPanel() {
         value={searchQuery}
         onChange={handleSearch}
       />
+
       {filteredUsers.map((user) => (
         <div
           key={user._id}
-          className="bg-base-100 shadow rounded p-4 mb-4 border"
+          className="bg-base-100 shadow rounded-lg p-4 mb-4 border text-sm sm:text-base"
         >
-          <p>
+          <p className="break-words mb-1">
             <strong>Email:</strong> {user.email}
           </p>
-          <p>
+          <p className="mb-1">
             <strong>Current Role:</strong> {user.role}
           </p>
-          <p>
+          <p className="break-words">
             <strong>Skills:</strong>{" "}
             {user.skills && user.skills.length > 0
               ? user.skills.join(", ")
@@ -122,7 +129,7 @@ export default function AdminPanel() {
           </p>
 
           {editingUser === user.email ? (
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 space-y-3">
               <select
                 className="select select-bordered w-full"
                 value={formData.role}
@@ -145,15 +152,15 @@ export default function AdminPanel() {
                 }
               />
 
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 <button
-                  className="btn btn-success btn-sm"
+                  className="btn btn-success btn-sm flex-1 sm:flex-none"
                   onClick={handleUpdate}
                 >
                   Save
                 </button>
                 <button
-                  className="btn btn-ghost btn-sm"
+                  className="btn btn-ghost btn-sm flex-1 sm:flex-none bg-base-200"
                   onClick={() => setEditingUser(null)}
                 >
                   Cancel
@@ -162,7 +169,7 @@ export default function AdminPanel() {
             </div>
           ) : (
             <button
-              className="btn btn-primary btn-sm mt-2"
+              className="btn btn-primary btn-sm mt-3 w-full sm:w-auto"
               onClick={() => handleEditClick(user)}
             >
               Edit
