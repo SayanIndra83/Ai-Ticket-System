@@ -11,7 +11,7 @@ import Admin from './pages/admin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Ai-Ticket-System">
     <Routes>
       <Route
       path='/'

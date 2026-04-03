@@ -13,7 +13,10 @@ import { onTicketCreated } from "./inngest/functions/on-ticket-create.js"
 
 const app = express();
 
-app.use(cors())
+app.use(cors({
+  origin: "https://sayanindra83.github.io", 
+  credentials: true
+}));
 app.use(express.json());
 
 // routing
