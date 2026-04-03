@@ -116,6 +116,9 @@ export default function AdminPanel() {
           className="bg-base-100 shadow rounded-lg p-4 mb-4 border text-sm sm:text-base"
         >
           <p className="break-words mb-1">
+            <strong>Username:</strong> {user.userName}
+          </p>
+          <p className="break-words mb-1">
             <strong>Email:</strong> {user.email}
           </p>
           <p className="mb-1">
