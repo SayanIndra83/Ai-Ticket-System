@@ -101,7 +101,7 @@ export default function Tickets() {
   };
 
   return (
-    <div className="relative w-full h-auto bg-white/40">
+    <div className="relative w-full h-auto">
       <div className="fixed top-0 left-0 w-full h-16 py-2 px-4 sm:px-6 flex flex-row items-center justify-between bg-base-100/80 backdrop-blur-md z-[99] border-b border-base-200">
         <div>
           <Link
