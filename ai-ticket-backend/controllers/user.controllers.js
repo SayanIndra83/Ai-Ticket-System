@@ -50,11 +50,10 @@ const registerUser = async (req, res) => {
             await inngest.send({
                 name: "user/signup",
                 data: {
-                    email
+                    email, userName
                 }
             });
         } catch (inngestError) {
-            // Log the error for you to see, but DON'T crash the server!
             console.error("⚠️ Inngest event failed, but continuing:", inngestError.message);
         }
 

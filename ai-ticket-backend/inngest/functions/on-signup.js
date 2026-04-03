@@ -19,7 +19,6 @@ export const onUserSignup = inngest.createFunction(
       await step.run("send-welcome-email", async()=>{
         const subject = `Welcome to the app`
         const message = `Pranam ${userName} 🙏,
-        \n\n
         Thanks for signing up. We're glad to have you onboard!`
 
         await sendMail(user.email, subject, message)

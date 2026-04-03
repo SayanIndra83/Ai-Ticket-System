@@ -40,8 +40,8 @@ export default function TicketDetailsPage() {
   if (!ticket) return <div className="text-center mt-20 font-bold">Ticket not found</div>;
 
   return (
-    <div className="max-w-4xl mx-auto p-3 sm:p-4 md:p-6">
-      <button onClick={() => navigate(-1)} className="bg-amber-300 text-sm text-black btn btn-ghost btn-sm mb-4">
+    <div className="max-w-4xl mx-auto p-3 sm:p-4 md:p-6 mt-6">
+      <button onClick={() => navigate(-1)} className="bg-amber-300 text-sm text-center text-black btn btn-ghost btn-sm mb-4 ">
         ← Back to Tickets
       </button>
 

@@ -92,7 +92,7 @@ export default function AdminPanel() {
     <div className="max-w-4xl mx-auto mt-6 sm:mt-10 px-4">
       <button
         onClick={() => navigate("/")}
-        className="bg-green-600 text-white text-sm btn btn-ghost btn-sm mb-4"
+        className="bg-green-600 text-white text-sm text-center btn btn-ghost btn-sm mb-4"
       >
         ← Home
       </button>
