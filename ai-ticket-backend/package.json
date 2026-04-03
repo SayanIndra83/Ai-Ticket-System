@@ -1,0 +1,30 @@
+{
+  "name": "ai-ticketing-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules index.js",
+    "inngest-dev": "npx inngest-cli@latest dev"
+  },
+  "keywords": [],
+  "author": "Sayan Indra",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "@inngest/agent-kit": "^0.13.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "inngest": "^4.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.1",
+    "mongoose": "^9.3.3",
+    "nodemailer": "^8.0.4"
+  }
+}
