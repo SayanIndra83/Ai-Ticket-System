@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import CheckAuth from "./components/check-auth.jsx"
 import Tickets from './pages/tickets.jsx'
 import TicketDetailsPage from './pages/ticket.jsx'
@@ -11,7 +11,7 @@ import Admin from './pages/admin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/Ai-Ticket-System">
+    <HashRouter basename="/Ai-Ticket-System">
     <Routes>
       <Route
       path='/'
@@ -54,6 +54,6 @@ createRoot(document.getElementById('root')).render(
       }
       />
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </StrictMode>,
 )
