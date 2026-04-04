@@ -27,7 +27,7 @@ function Login() {
           navigate("/");
         }
         else{
-          alert(data.message|| "Signup failed")
+          alert(data.message|| "Login failed")
         }
       } catch (error) {
         alert("Something went wrong")
