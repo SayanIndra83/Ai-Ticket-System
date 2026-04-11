@@ -7,13 +7,13 @@ const analyzeTicket = async(ticket) =>{
             apiKey: process.env.GEMINI_API_KEY,
         }),
         name: "AI Ticket Triage Assistant",
-        system:`You are an expert AI assistant that processes technical support tickets. 
+        system:`You are an expert AI assistant that processes technical support tickets and other kindof supports. 
 
             Your job is to:
             1. Summarize the issue.
             2. Estimate its priority.
             3. Provide helpful notes and resource links for human moderators.
-            4. List relevant technical skills required.
+            4. List relevant technical skills required or whatever skills required.
                 
             IMPORTANT:
             - Respond with *only* valid raw JSON.
