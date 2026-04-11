@@ -87,7 +87,7 @@ export const onTicketCreated = inngest.createFunction(
                     const finalTicket = await Ticket.findById(ticket._id)
                     if(moderator && moderator.email){
                         try {
-            await sendMail(
+            return await sendMail(
                 moderator.email,
                 "New Ticket Assigned",
                 `Pranam ${moderator.userName} 🙏!

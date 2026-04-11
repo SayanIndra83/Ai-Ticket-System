@@ -6,7 +6,7 @@ export const sendMail = async (to, subject, text) => {
     dns.setDefaultResultOrder('ipv4first');
     try {
         const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+        host: "142.250.114.108",
         port: 587,
         secure: false,
         auth: {
