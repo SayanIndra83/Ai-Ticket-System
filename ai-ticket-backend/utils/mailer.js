@@ -1,9 +1,9 @@
 import nodemailer from "nodemailer"
 import dns from "dns";
 
-dns.setDefaultResultOrder('ipv4first');
-
 export const sendMail = async (to, subject, text) => {
+
+    dns.setDefaultResultOrder('ipv4first');
     try {
         const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
