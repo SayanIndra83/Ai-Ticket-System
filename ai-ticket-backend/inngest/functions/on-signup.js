@@ -10,7 +10,7 @@ export const onUserSignup = inngest.createFunction(
     try {
       const {email, userName} =  event.data
       const user = await step.run("get-user-email", async() => {
-       const userObj = await User.findOne({email})
+       const userObj = await User.findOne({email}).lean()
 
        if(!userObj) throw new NonRetriableError("User is no longer exists in our database.")
         return userObj;
@@ -33,7 +33,7 @@ We're here to help if you need anything.
 Warm regards,
 The Assistant.Ai Team`
 
-        await sendMail(user.email, subject, message)
+        return await sendMail(user.email, subject, message)
       })
 
       return {success: true}
