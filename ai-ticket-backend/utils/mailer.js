@@ -7,19 +7,12 @@ export const sendMail = async (to, subject, text) => {
     try {
         const transporter = nodemailer.createTransport({
         host: "142.250.114.108",
-        port: 587,
-        secure: false,
+        port: 465,
+        secure: true,
         auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
   },
-
-  tls: {
-                rejectUnauthorized: false
-            },
-
-        socketTimeout: 20000,
-            dnsTimeout: 20000,
             family: 4
 });
 
